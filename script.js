@@ -108,11 +108,14 @@ document.addEventListener("DOMContentLoaded", function () {
           showDescription(card, data.title, data.description);
           isHoveringCard = true;
         }
-        else if(isHoveringCard){
-          setTimeout(() => {
-              hideDescription(card);
-              isHoveringCard = false;
-          }, 300);
+        else{
+          card.addEventListener("mouseleave", function () {
+            setTimeout(() => {
+              if (isHoveringCard) {
+                hideDescription(card);
+              }
+            }, 300); // Delay hiding to check if the cursor is still inside
+          });
         }
       });
     }
