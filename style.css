@@ -1,0 +1,177 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  body h1{
+    color: rgb(90, 90, 213);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+
+  body h1 span{
+    color: black;
+  }
+  
+  .card {
+    position: relative;
+    width: 45%;
+    height: 330px;
+    margin: 20px 0;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    filter: brightness(0.4);
+  }
+  
+  .title {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    width: 80%;
+    display: inline;
+    z-index: 1;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  
+  .description {
+    display: none;
+  }
+  
+  .hovered-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0.8;
+    background-color: #e44164;
+    transition: all 0.5s ease-in-out;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: slideIn 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      width: 0;
+      height: 0;
+    }
+    to {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      width: 100%;
+      height: 100%;
+    }
+    to {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .card:hover{
+    cursor: pointer;
+  }
+  
+  .card:hover .hovered-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+  }
+  
+  /* Adjusted rule to hide title only when hovering over the card */
+  .card:hover .title {
+    display: none;
+  }
+  
+  .card:hover .hovered-box h1 {
+    color: white; /* Set title color to white inside hovered box */
+    text-align: center;
+    opacity: 1;
+    font-weight: normal;
+  }
+  
+  .card:hover .hovered-box p {
+    color: white; /* Set description color to white inside hovered box */
+    text-align: center;
+  }
+
+  .card:not(:hover) .hovered-box {
+    animation: slideOut 0.2s ease-in-out forwards;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 80%;
+      max-width: none;
+    }
+  
+    .image {
+      height: 100%;
+    }
+  
+    .title {
+      font-size: 1.2rem;
+    }
+
+    .card:hover .hovered-box h1{
+      font-size: 1.4rem;
+    }
+
+    .card:hover .hovered-box p{
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .card {
+      width: 100%;
+      height: 200px;
+    }
+  
+    .image {
+      height: 100%;
+    }
+  
+    .title {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+
+    .card:hover .hovered-box p{
+      font-size: 0.8rem;
+    }
+
+    .card:hover .hovered-box h1{
+      font-size: 1.2rem;
+    }
+  
+    .description {
+      display: none;
+    }
+  }
+  
