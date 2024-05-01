@@ -80,25 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     else {
-      // let isHoveringCard = false;
-
-      // // Hover effect
-      // card.addEventListener("click", function () {
-      //   if (isHoveringCard === false) {
-      //     showDescription(card, data.title, data.description);
-      //     console.log(isHoveringCard);
-      //     isHoveringCard = !isHoveringCard;
-      //   }
-      //   else {
-      //     setTimeout(() => {
-      //       if (!isHoveringCard) {
-      //         hideDescription(card);
-      //       }
-      //     }, 300);
-      //     console.log(isHoveringCard);
-      //     isHoveringCard = !isHoveringCard;
-      //   }
-      // });
 
       let isHoveringCard = false;
 
@@ -113,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
               if (isHoveringCard) {
                 hideDescription(card);
+                isHoveringCard = false;
               }
             }, 300); // Delay hiding to check if the cursor is still inside
           });
