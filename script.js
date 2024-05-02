@@ -91,12 +91,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         else{
           card.addEventListener("mouseleave", function () {
-            setTimeout(() => {
-              if (isHoveringCard) {
-                hideDescription(card);
-                isHoveringCard = false;
-              }
-            }, 300); // Delay hiding to check if the cursor is still inside
+            if (isHoveringCard) {
+              hideDescription(card);
+              isHoveringCard = false;
+            }
+            // setTimeout(() => {
+            //   if (isHoveringCard) {
+            //     hideDescription(card);
+            //     isHoveringCard = false;
+            //   }
+            // }, 300); // Delay hiding to check if the cursor is still inside
           });
         }
       });
