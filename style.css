@@ -1,15 +1,17 @@
 @font-face {
   font-family: 'Gotham';
-  src: url('path/to/Gotham-Bold.otf') format('opentype');
-  font-weight: bold;
+  src: url('./Font/GothamBold.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Gotham-700';
-  src: url('path/to/Gotham-Bold.otf') format('opentype');
-  font-weight: 700;
+  font-family: 'Gotham-Light';
+  src: url('./Font/GothamLight.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('./Font/GothamMedium.woff') format('woff');
+}
 
 .container {
     display: flex;
@@ -19,8 +21,8 @@
   }
 
   body h1{
-    color: #e44164;
-    font-family: 'Gotham-700', sans-serif;
+    color: #114A8DCC;
+    font-family: 'Gotham', sans-serif;
     text-align: center;
     font-weight: 600;
     font-size: 48px;
@@ -28,6 +30,7 @@
 
   body h1 span{
     color: black;
+    font-family: 'Gotham', sans-serif;
   }
   
   .card {
@@ -62,7 +65,7 @@
     z-index: 1;
     text-align: center;
     word-wrap: break-word;
-    font-family: 'Gotham-700', sans-serif;
+    font-family: 'Gotham', sans-serif;
     font-size: 25px;
     font-weight: 600;
   }
@@ -74,8 +77,8 @@
     width: 0;
     height: 0;
     overflow: hidden;
-    opacity: 0.8;
-    background-color: #e44164;
+    /* opacity: 0.8; */
+    background-color: #114A8DCC;
     transition: all 0.5s ease-in-out;
     color: white;
     padding: 20px;
@@ -120,28 +123,36 @@
   .card:hover .title {
     display: none;
   }
+
+  .hovered-box h1{
+    visibility: hidden;
+  }
   
   .card:hover .hovered-box h1 {
-    color: white; /* Set title color to white inside hovered box */
+    visibility: visible;
+    /* color: white; Set title color to white inside hovered box */
     text-align: center;
     opacity: 1;
-    font-family: 'Gotham-700', sans-serif;
+    font-family: 'Gotham', sans-serif;
     font-size: 32px;
     font-weight: 700;
     letter-spacing: -5%;
     margin-bottom: -20px;
     margin-left: 20%;
+    transition: 0.8s all;
   }
   
   .card:hover .hovered-box p {
     color: white; /* Set description color to white inside hovered box */
     text-align: center;
+    font-family: 'Gotham-Light', sans-serif;
     font-size: 20px;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: -5%;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: 20%;
+    transition: 0.5s all;
   }
 
   .card:not(:hover) .hovered-box {
