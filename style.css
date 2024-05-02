@@ -1,13 +1,29 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url('path/to/Gotham-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Gotham-700';
+  src: url('path/to/Gotham-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
+
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 48px;
   }
 
   body h1{
-    color: rgb(90, 90, 213);
-    font-family: 'Montserrat', sans-serif;
+    color: #e44164;
+    font-family: 'Gotham-700', sans-serif;
     text-align: center;
+    font-weight: 600;
+    font-size: 48px;
   }
 
   body h1 span{
@@ -18,12 +34,11 @@
     position: relative;
     width: 45%;
     height: 330px;
-    margin: 20px 0;
+    /* margin: 20px 0; */
     background-color: #f0f0f0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    font-family: 'Montserrat', sans-serif;
   }
   
   .image {
@@ -47,10 +62,9 @@
     z-index: 1;
     text-align: center;
     word-wrap: break-word;
-  }
-  
-  .description {
-    display: none;
+    font-family: 'Gotham-700', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
   }
   
   .hovered-box {
@@ -100,7 +114,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0px;
   }
   
   /* Adjusted rule to hide title only when hovering over the card */
@@ -112,16 +125,35 @@
     color: white; /* Set title color to white inside hovered box */
     text-align: center;
     opacity: 1;
-    font-weight: normal;
+    font-family: 'Gotham-700', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -5%;
+    margin-bottom: -20px;
   }
   
   .card:hover .hovered-box p {
     color: white; /* Set description color to white inside hovered box */
     text-align: center;
+    font-size: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -5%;
+    margin-top: 20px;
   }
 
   .card:not(:hover) .hovered-box {
     animation: slideOut 0.2s ease-in-out forwards;
+  }
+
+  @media screen and (max-width: 1920px) and (min-width: 1500px) {
+    .container{
+      height: 92vh;
+    }
+
+    .card{
+      height: 50vh;
+    }
   }
   
   @media screen and (max-width: 768px) {
@@ -173,15 +205,9 @@
     .description {
       display: none;
     }
-  }
-
-  @media screen and (max-width: 1920px) and (min-width: 1500px) {
-    .container{
-      height: 92vh;
-    }
-
-    .card{
-      height: 50vh;
+    
+    body h1{
+      font-size: 32px;
     }
   }
   
